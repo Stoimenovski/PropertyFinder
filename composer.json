@@ -1,0 +1,17 @@
+{
+    "name": "root/property_finder",
+    "authors": [
+        {
+            "name": "Stojan",
+            "email": "stoimenovski@digital-orange.com"
+        }
+    ],
+    "require": {},
+    
+    "autoload": {
+        "psr-4": {
+            "PropertyFinder\\": "src/"
+        }
+    }
+    
+}
