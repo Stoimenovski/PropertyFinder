@@ -3,6 +3,7 @@
 namespace PropertyFinder\TripSorter;
 
 use PropertyFinder\TripSorter\BoardingCard;
+
 /**
  * Description of Train
  *
