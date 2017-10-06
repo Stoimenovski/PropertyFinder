@@ -3,13 +3,18 @@
 namespace PropertyFinder\TripSorter;
 
 use PropertyFinder\TripSorter\BoardingCard;
+
 /**
- * Description of Bus
+ * Bus class. Contain methods related to bus type of transportation.
  *
  * @author Stoimenovski Stojan
  */
 class Bus extends BoardingCard
 {
+    /**
+     * Return details about bus, such as bus number or description about bus.
+     * @return mixed
+     */
     public function getBus()
     {
         $bus = json_decode($this->tripDetails);
@@ -18,6 +23,11 @@ class Bus extends BoardingCard
                ( isset($bus->bus_description) ? $bus->bus_description : null);
     }
     
+    /**
+     * Description (guidelines) for trip.
+     * Return string if all conditions are met or NULL if something went wrong
+     * @return mixed
+     */
     public function description()
     {
         $desc = '';

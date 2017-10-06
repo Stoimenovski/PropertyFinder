@@ -6,12 +6,19 @@
             "email": "stoimenovski@digital-orange.com"
         }
     ],
-    "require": {},
+    "require": {
+        "phpunit/phpunit": "^6.4"
+    },
     
     "autoload": {
         "psr-4": {
             "PropertyFinder\\": "src/"
         }
+    },
+    "require-dev": {
+        "phpdocumentor/phpdocumentor": "2.*"
     }
+    
+    
     
 }

@@ -5,18 +5,25 @@ namespace PropertyFinder\TripSorter;
 use PropertyFinder\TripSorter\BoardingCard;
 
 /**
- * Description of Airplane
+ * Airplane class. Contain methods related to air type of transportation.
  *
  * @author Stoimenovski Stojan
  */
 class Airplane extends BoardingCard
 {
-   
+   /**
+    * Return details about flight. 
+    * @return object
+    */
     public function getFlightDetails()
     {
         return json_decode($this->tripDetails);
     }
        
+    /**
+     * Return flight number.
+     * @return mixed
+     */
     public function getFlight()
     {
         if(isset($this->getFlightDetails()->flight_number))
@@ -25,6 +32,10 @@ class Airplane extends BoardingCard
             return NULL;
     }
     
+    /**
+     * Return gate.
+     * @return mixed
+     */
     public function getGate()
     {
         if(isset($this->getFlightDetails()->gate))
@@ -33,6 +44,10 @@ class Airplane extends BoardingCard
             return NULL;
     }
     
+    /**
+     * Return information about baggage drop counter.
+     * @return mixed
+     */
     public function baggageDrop()
     {
         if(isset($this->getFlightDetails()->baggage_drop))
@@ -42,6 +57,10 @@ class Airplane extends BoardingCard
         
     }
     
+    /**
+     * Return information about automatic baggage transfer.
+     * @return mixed
+     */
     public function baggageAutoTranfer()
     {
         if(isset($this->getFlightDetails()->auto_baggage_transfer))
@@ -50,6 +69,11 @@ class Airplane extends BoardingCard
             return NULL;
     }
     
+    /**
+     * Description (guidelines) for trip.
+     * Return string if all conditions are met or NULL if something went wrong
+     * @return mixed
+     */
     public function description()   
     {
         $desc = '';
@@ -69,9 +93,11 @@ class Airplane extends BoardingCard
             else
                 $desc.= 'Missing information about gate or seat number. ';
             
+            //Baggage drop counter is defined
             if($this->baggageDrop())
                 $desc .= 'Baggage drop at ticket counter '. $this->baggageDrop ().'. ';
             
+            //Baggage auto transfer is defined
             if($this->baggageAutoTranfer() !== NULL && $this->baggageAutoTranfer())
                 $desc .= 'Baggage will we automatically transferred from your last leg. ';
             
@@ -81,5 +107,4 @@ class Airplane extends BoardingCard
             return NULL;
         
     }
-    
 }

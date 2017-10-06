@@ -5,13 +5,16 @@ namespace PropertyFinder\TripSorter;
 use PropertyFinder\TripSorter\BoardingCard;
 
 /**
- * Description of Train
+ * Train class. Contain methods related to train type of transportation.
  *
  * @author Stoimenovski Stojan
  */
 class Train extends BoardingCard
 {
-    
+    /**
+     * Return details about train, such as train number or description about train.
+     * @return mixed
+     */
     public function getTrain()
     {
         $train = json_decode($this->tripDetails);
@@ -20,6 +23,11 @@ class Train extends BoardingCard
                ( isset($train->train_description) ? $train->train_description : null);
     }
     
+    /**
+     * Description (guidelines) for trip.
+     * Return string if all conditions are met or NULL if something went wrong
+     * @return mixed
+     */
     public function description()
     {
         $desc = '';
