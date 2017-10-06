@@ -142,7 +142,6 @@ class CardSorter
         $this->printDetails($boardingCards);
     }
     
-    
     /**
      * Print trip details
      * @param array $cards
@@ -154,11 +153,11 @@ class CardSorter
         
         foreach($cards as $c)
         {
-            $description .= $step.") ". $c->description()."\n";
+            $description .= $step.") ". $c->description()."<br>";
             $step++;
         }
         
-        $description .= $step.") You have arrived at your final destination. \n";
+        $description .= $step.") You have arrived at your final destination.";
         
         echo $description;
     }

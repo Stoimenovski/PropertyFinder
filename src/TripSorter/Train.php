@@ -35,7 +35,7 @@ class Train extends BoardingCard
         if($this->getTrain())
         {
             $desc .= 'Take '.$this->getTrain().' from '. $this->getFrom(). ' to '.$this->getTo().'. ';
-            $this->getSeatNumber() ? $desc.= 'Sit in seat No.'. $this->getSeatNumber().'. ' : $desc.= 'No seat assignment.';
+            $this->getSeatNumber() ? $desc.= 'Sit in seat No.'. $this->getSeatNumber().'. ' : $desc.= 'No seat assignment. ';
             
             return  $desc;
         }

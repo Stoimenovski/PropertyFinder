@@ -35,7 +35,7 @@ class Bus extends BoardingCard
         if($this->getBus())
         {
             $desc .= 'Take '.$this->getBus().' from '. $this->getFrom(). ' to '.$this->getTo().'. ';
-            $this->getSeatNumber() ? $desc.= 'Sit in seat No.'. $this->getSeatNumber().'. ' : $desc.= 'No seat assignment.';
+            $this->getSeatNumber() ? $desc.= 'Sit in seat No.'. $this->getSeatNumber().'. ' : $desc.= 'No seat assignment. ';
             
             return  $desc;
         }
